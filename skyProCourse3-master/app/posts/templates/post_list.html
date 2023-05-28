@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все посты</title>
+</head>
+<body>
+<p>Посты</p>
+<h1>Поиск постов</h1>
+
+<!-- Форма для отправки GET-запроса на маршрут "/post_list" с параметром "s" -->
+<form action="/post_list" method="get">
+    <label for="search">Поиск:</label>
+    <input type="text" id="search" name="s" required>
+    <button type="submit">Найти</button>
+</form>
+
+<!-- Шаблон для вывода всех постов, содержащих ключевое слово -->
+{% for post in posts %}
+    <img src="{{post.pic}}" width="25%" alt="">
+    <p>{{ post.poster_name }}</p>
+    <p>{{ post.content }}</p>
+{% endfor %}
+
+</body>
+</html>

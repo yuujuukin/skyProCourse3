@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все посты</title>
+</head>
+<body>
+<p>Посты</p>
+<h1>Поиск постов</h1>
+
+<!-- Добавляем форму для поиска -->
+<form action="/post_list" method="get">
+        <p>По вхождению слова</p>
+        <input type="text" name="s">
+        <input type="submit" value="Найти" class="button">
+</form>
+
+<!-- Выводим список постов -->
+{% for post in posts %}
+  <p>{{ post.content }}</p>
+{% endfor %}
+</body>
+</html>
